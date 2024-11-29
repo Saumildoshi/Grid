@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GridVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="GridVC" id="BYZ-38-t0r" customClass="GridVC" customModule="Grid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L11-BL-6Ya">
+                                <rect key="frame" x="16" y="69" width="361" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-ja-WJv">
+                                <rect key="frame" x="16" y="113" width="361" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create Grid"/>
+                                <connections>
+                                    <action selector="btnCreateGrid:" destination="BYZ-38-t0r" eventType="touchUpInside" id="37d-8G-StS"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bSh-id-Qp0">
+                                <rect key="frame" x="0.0" y="158" width="393" height="694"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="huI-db-ZNg">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DgV-Bj-thW">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UK8-h3-gB1">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Fvq-ys-KNh"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="b4v-te-Tq3"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L11-BL-6Ya" secondAttribute="trailing" constant="16" id="3we-xM-ZrX"/>
+                            <constraint firstItem="KXp-ja-WJv" firstAttribute="top" secondItem="L11-BL-6Ya" secondAttribute="bottom" constant="10" id="82y-vZ-PyX"/>
+                            <constraint firstAttribute="bottom" secondItem="bSh-id-Qp0" secondAttribute="bottom" id="DMc-NX-R3L"/>
+                            <constraint firstItem="bSh-id-Qp0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LKE-ZD-Sw5"/>
+                            <constraint firstItem="KXp-ja-WJv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MWX-uo-rOf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KXp-ja-WJv" secondAttribute="trailing" constant="16" id="ap2-Y1-Iak"/>
+                            <constraint firstItem="bSh-id-Qp0" firstAttribute="top" secondItem="KXp-ja-WJv" secondAttribute="bottom" constant="15" id="inw-1N-KHs"/>
+                            <constraint firstItem="bSh-id-Qp0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jeF-eC-seL"/>
+                            <constraint firstItem="L11-BL-6Ya" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="kGi-la-2dT"/>
+                            <constraint firstItem="L11-BL-6Ya" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="zGC-4e-iSc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colGrid" destination="bSh-id-Qp0" id="fXR-vP-cjH"/>
+                        <outlet property="txtInput" destination="L11-BL-6Ya" id="cah-cB-kce"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
